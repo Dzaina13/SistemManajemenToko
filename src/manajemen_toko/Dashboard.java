@@ -4,6 +4,7 @@
  */
 package manajemen_toko;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
@@ -11,6 +12,7 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -29,6 +31,8 @@ public class Dashboard extends javax.swing.JFrame {
         //bg warna putih
         getContentPane().setBackground(new Color(250, 250, 250));
         LoadData();
+        loadLineChart();
+        loadPieChart();
     }
 
     /**
@@ -73,6 +77,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         barangKeluarValue = new javax.swing.JLabel();
         grafikPendapatan = new javax.swing.JPanel();
+        grafikBarang = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -212,7 +217,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(historyBtn)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 403, Short.MAX_VALUE)
                 .addGroup(sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
                     .addGroup(sideBarLayout.createSequentialGroup()
@@ -302,7 +307,7 @@ public class Dashboard extends javax.swing.JFrame {
         totalBarangPanelLayout.setHorizontalGroup(
             totalBarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(totalBarangPanelLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(19, 19, 19)
                 .addGroup(totalBarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(totalBarangPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -311,7 +316,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(totalBarangLabel)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         totalBarangPanelLayout.setVerticalGroup(
             totalBarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,7 +350,7 @@ public class Dashboard extends javax.swing.JFrame {
         barangMasukPanelLayout.setHorizontalGroup(
             barangMasukPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(barangMasukPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(20, 20, 20)
                 .addGroup(barangMasukPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(barangMasukPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -354,7 +359,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(barangMasukLabel)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         barangMasukPanelLayout.setVerticalGroup(
             barangMasukPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,7 +393,7 @@ public class Dashboard extends javax.swing.JFrame {
         barangKeluarPanelLayout.setHorizontalGroup(
             barangKeluarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(barangKeluarPanelLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(25, 25, 25)
                 .addGroup(barangKeluarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(barangKeluarPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -397,7 +402,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(barangKeluarLabel)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         barangKeluarPanelLayout.setVerticalGroup(
             barangKeluarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,17 +416,18 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        grafikPendapatan.setPreferredSize(new java.awt.Dimension(390, 390));
+        grafikPendapatan.setPreferredSize(new java.awt.Dimension(600, 400));
+        grafikPendapatan.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout grafikPendapatanLayout = new javax.swing.GroupLayout(grafikPendapatan);
-        grafikPendapatan.setLayout(grafikPendapatanLayout);
-        grafikPendapatanLayout.setHorizontalGroup(
-            grafikPendapatanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+        javax.swing.GroupLayout grafikBarangLayout = new javax.swing.GroupLayout(grafikBarang);
+        grafikBarang.setLayout(grafikBarangLayout);
+        grafikBarangLayout.setHorizontalGroup(
+            grafikBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
-        grafikPendapatanLayout.setVerticalGroup(
-            grafikPendapatanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+        grafikBarangLayout.setVerticalGroup(
+            grafikBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 129, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -440,11 +446,14 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(barangMasukPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
                         .addComponent(barangKeluarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(57, Short.MAX_VALUE))
+                        .addContainerGap(75, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tittle)
-                            .addComponent(grafikPendapatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(grafikPendapatan, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(grafikBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -460,7 +469,9 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(barangMasukPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(barangKeluarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addComponent(grafikPendapatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(grafikPendapatan, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(grafikBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -581,14 +592,13 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }
     
-    private void loadGrafik () {
+    private void loadLineChart () {
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         try {
             Connection Vconn = (Connection) KoneksiDB.configDB(); // koneksi DB kamu
-            String query = "SELECT DATE_FORMAT(tanggal, '%Y-%m') AS bulan, SUM(total_harga) AS total " +
-                           "FROM transactions GROUP BY bulan ORDER BY bulan";
+            String query = "SELECT DATE_FORMAT(tanggal, '%Y-%m') AS bulan, SUM(total_harga) AS total FROM transactions GROUP BY bulan ORDER BY bulan";
 
             java.sql.Statement s = Vconn.createStatement();
             java.sql.ResultSet rs = s.executeQuery(query);
@@ -609,9 +619,85 @@ public class Dashboard extends javax.swing.JFrame {
                 "Pendapatan Bulanan", "Bulan", "Total Pendapatan",
                 dataset);
 
-        ChartPanel panel = new ChartPanel(chart);
-        setContentPane(panel);
+        ChartPanel chartPanel = new ChartPanel(chart);
+//        setContentPane(panel);
+        
+        chartPanel.setPreferredSize(new java.awt.Dimension(390, 600)); // Set ukuran panel grafik
+        grafikPendapatan.removeAll(); // Hapus konten sebelumnya
+        grafikPendapatan.setLayout(new BorderLayout()); // Set layout manager
+        grafikPendapatan.add(chartPanel, BorderLayout.CENTER); // Tambahkan ChartPanel ke grafikPendapatan
+        grafikPendapatan.revalidate(); // Revalidate untuk memperbarui tampilan
+        grafikPendapatan.repaint(); // Repaint untuk menggambar ulang
     }
+    
+    private void loadPieChart() {
+        DefaultPieDataset dataset = new DefaultPieDataset();
+
+        try {
+            Connection Vconn = (Connection) KoneksiDB.configDB(); // koneksi DB kamu
+
+            // Query untuk mendapatkan jumlah barang masuk, keluar, dan total barang
+            String queryMasuk = "SELECT SUM(jumlah) AS total_masuk FROM item_log WHERE tipe = 'masuk'";
+            String queryKeluar = "SELECT SUM(jumlah) AS total_keluar FROM item_log WHERE tipe = 'keluar'";
+            String queryTotalBarang = "SELECT SUM(stok) AS total_barang FROM items";
+
+            java.sql.Statement s1 = Vconn.createStatement();
+            java.sql.Statement s2 = Vconn.createStatement();
+            java.sql.Statement s3 = Vconn.createStatement();
+
+            // Eksekusi query
+            java.sql.ResultSet rsMasuk = s1.executeQuery(queryMasuk);
+            java.sql.ResultSet rsKeluar = s2.executeQuery(queryKeluar);
+            java.sql.ResultSet rsTotalBarang = s3.executeQuery(queryTotalBarang);
+
+            // Ambil data barang masuk
+            if (rsMasuk.next()) {
+                int totalMasuk = rsMasuk.getInt("total_masuk");
+                dataset.setValue("Barang Masuk", totalMasuk);
+            }
+
+            // Ambil data barang keluar
+            if (rsKeluar.next()) {
+                int totalKeluar = rsKeluar.getInt("total_keluar");
+                dataset.setValue("Barang Keluar", totalKeluar);
+            }
+
+            // Ambil data total barang
+            if (rsTotalBarang.next()) {
+                int totalBarang = rsTotalBarang.getInt("total_barang");
+                dataset.setValue("Total Barang", totalBarang);
+            }
+
+            // Tutup ResultSet dan Statement
+            rsMasuk.close();
+            rsKeluar.close();
+            rsTotalBarang.close();
+            s1.close();
+            s2.close();
+            s3.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Terjadi kesalahan saat mencari: " + e.getMessage());
+        }
+
+        // Buat grafik lingkaran
+        JFreeChart pieChart = ChartFactory.createPieChart(
+                "Distribusi Barang", // Judul grafik
+                dataset, // Dataset
+                true, // Tampilkan legenda
+                true, // Tampilkan tooltips
+                false // Tampilkan URL
+        );
+
+        ChartPanel chartPanel = new ChartPanel(pieChart);
+        chartPanel.setPreferredSize(new java.awt.Dimension(390, 390)); // Set ukuran panel grafik
+
+        grafikBarang.removeAll(); // Hapus konten sebelumnya
+        grafikBarang.setLayout(new BorderLayout()); // Set layout manager
+        grafikBarang.add(chartPanel, BorderLayout.CENTER); // Tambahkan ChartPanel ke grafikPendapatan
+        grafikBarang.revalidate(); // Revalidate untuk memperbarui tampilan
+        grafikBarang.repaint(); // Repaint untuk menggambar ulang
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel barangBtn;
@@ -624,6 +710,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel dashbaordBtn;
     private javax.swing.JLabel dashbaordLabel5;
     private javax.swing.JLabel dashbaordLabel6;
+    private javax.swing.JPanel grafikBarang;
     private javax.swing.JPanel grafikPendapatan;
     private javax.swing.JLabel historyBtn;
     private javax.swing.JLabel jLabel1;
