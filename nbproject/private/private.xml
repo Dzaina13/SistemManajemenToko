@@ -4,6 +4,30 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/Pbo_manajemen_toko.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/manajemen_toko/Dashboard.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/manajemen_toko/KoneksiDB.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/Koneksi.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/TransaksiKasir.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/manajemen_toko/EditUser.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/manajemen_toko/TambahUser.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/manajemen_toko/User.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/manajemen_toko/Histori.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/TambahBarang.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/Dashboard.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/EditBarang.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/TambahUser.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/Histori.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/EditUser.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/Barang.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/User.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/ReturnBarang.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/ListBarang.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/Login.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/DashboardKasir.java</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/resource/icons/Frame-1.png</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/resource/icons/Frame-2.png</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/resource/icons/Frame-3.png</file>
+            <file>file:/home/dzaina/NetBeansProjects/pbo_manajemen_toko/src/pbo_manajemen_toko/HistoriKasir.java</file>
         </group>
     </open-files>
 </project-private>
