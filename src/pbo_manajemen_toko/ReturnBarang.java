@@ -646,7 +646,7 @@ public class ReturnBarang extends javax.swing.JFrame {
                 pstUpdate.executeUpdate();
                 
                 // Kurangi jumlah dan subtotal di transaction_items
-                String updateTransaksiItem = "UPDATE transaction_items SET jumlah = jumlah - ?, subtotal = subtotal - ((subtotal / jumlah) * ?) WHERE id_transaksi = ? AND id_item = ?";
+                String updateTransaksiItem = "UPDATE transaction_items ti JOIN items i ON ti.id_item = i.id_item SET ti.jumlah = ti.jumlah - ?, ti.subtotal = ti.subtotal-(i.harga*?) WHERE ti.id_transaksi = ? AND ti.id_item = ?";
                 pstUpdateTransaksi = Vconn.prepareStatement(updateTransaksiItem);
                 pstUpdateTransaksi.setInt(1, jumlahReturn);
                 pstUpdateTransaksi.setInt(2, jumlahReturn);

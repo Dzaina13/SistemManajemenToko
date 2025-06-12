@@ -42,22 +42,6 @@ public class Login extends javax.swing.JFrame {
       setupPlaceholders();
   }
   
-  // Method untuk hash password
-  private String hashPassword(String password) {
-      try {
-          MessageDigest md = MessageDigest.getInstance("SHA-256");
-          byte[] hashedBytes = md.digest(password.getBytes());
-          StringBuilder sb = new StringBuilder();
-          for (byte b : hashedBytes) {
-              sb.append(String.format("%02x", b));
-          }
-          return sb.toString();
-      } catch (NoSuchAlgorithmException e) {
-          e.printStackTrace();
-          return password; // fallback jika hashing gagal
-      }
-  }
-  
   // Getter methods untuk data user yang login
   public static int getLoggedInUserId() {
       return loggedInUserId;
@@ -413,10 +397,8 @@ public class Login extends javax.swing.JFrame {
                    
                     break;
 
-                case "gudang":
-                    // DashboardGudang dashboardGudang = new DashboardGudang();
-                    // dashboardGudang.setVisible(true);
-                    break;
+            
+              
                  
             }
 

@@ -379,45 +379,6 @@ private void setFullScreenMode(boolean fullscreen) {
         login.setVisible(true);
         dispose();
     }
-
-//    private void loadHistoriTransaksi(String keyword) {
-//        DefaultTableModel tbl_model = (DefaultTableModel) ftblhistori.getModel();
-//        tbl_model.setRowCount(0);
-//
-//        try (java.sql.Connection Vconn = Koneksi.konfigDB()) {
-//            String sql = "SELECT id_transaksi, id_user, id_diskon, total_harga, tanggal FROM transactions";
-//
-//            if (keyword != null && !keyword.isEmpty()) {
-//                sql += " WHERE id_user LIKE ? OR id_transaksi LIKE ? OR tanggal LIKE ? ";
-//            }
-//
-//            sql += " ORDER BY tanggal DESC";
-//
-//            java.sql.PreparedStatement pst = Vconn.prepareStatement(sql);
-//
-//            if (keyword != null && !keyword.isEmpty()) {
-//                String key = "%" + keyword + "%";
-//                pst.setString(1, key);
-//                pst.setString(2, key);
-//                pst.setString(3, key);
-//            }
-//
-//            java.sql.ResultSet rs = pst.executeQuery();
-//
-//            while (rs.next()) {
-//                String id_transaksi = rs.getString("id_transaksi");
-//                String idUser = rs.getString("id_user");
-//                String id_diskon = rs.getString("id_diskon");
-//                String total_harga = rs.getString("total_harga");
-//                String waktu = rs.getString("tanggal");
-//
-//                tbl_model.addRow(new Object[]{id_transaksi, idUser, id_diskon ,total_harga, waktu});
-//            }
-//
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(this, "Gagal load histori: " + e.getMessage());
-//        }
-//    }
     
     private void tampil_tabel_histori_transaksi() {
         // membuat objek model pada tabel

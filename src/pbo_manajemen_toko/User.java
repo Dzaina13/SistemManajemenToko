@@ -534,7 +534,7 @@ public class User extends javax.swing.JFrame {
             tabel_user.setModel(tb);
             
         } catch (Exception e) {
-            
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
         
     }
