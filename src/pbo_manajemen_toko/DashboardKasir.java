@@ -110,11 +110,6 @@ public class DashboardKasir extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard Kasir");
         setBackground(new java.awt.Color(250, 250, 250));
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
 
         sideBar.setBackground(new java.awt.Color(237, 255, 249));
 
@@ -487,6 +482,7 @@ public class DashboardKasir extends javax.swing.JFrame {
 
     private void logoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseClicked
         // TODO add your handling code here:
+        Login.Session.clearSession();
         Login login = new Login();
         login.setVisible(true);
         dispose();

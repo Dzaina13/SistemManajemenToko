@@ -26,9 +26,10 @@ public class HistoriKasir extends javax.swing.JFrame {
         // Set background color for the content pane to match the overall light theme
         getContentPane().setBackground(new Color(250, 250, 250));
 //        loadHistoriTransaksi(null);
-        tampil_tabel_histori_transaksi();
+        
         
         setFullScreenMode(true);
+        tampil_tabel_histori_transaksi();
         loadnama();
     }
 
@@ -43,13 +44,10 @@ public class HistoriKasir extends javax.swing.JFrame {
 
         sideBarPanel = new javax.swing.JPanel();
         logoTitleLabel1 = new javax.swing.JLabel();
-        logoTitleLabel2 = new javax.swing.JLabel();
         dashboardBtn = new javax.swing.JLabel();
-        dashboardIcon = new javax.swing.JLabel();
         transaksiBtn = new javax.swing.JLabel();
         historiTransaksiBtn = new javax.swing.JLabel();
         returnBarangBtn = new javax.swing.JLabel();
-        returnBarangIcon = new javax.swing.JLabel();
         logoutBtn = new javax.swing.JLabel();
         logoutIcon = new javax.swing.JLabel();
         profileNameLabel = new javax.swing.JLabel();
@@ -80,12 +78,6 @@ public class HistoriKasir extends javax.swing.JFrame {
         logoTitleLabel1.setForeground(new java.awt.Color(50, 142, 110));
         logoTitleLabel1.setText("TokoAja.");
 
-        logoTitleLabel2.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
-        logoTitleLabel2.setForeground(new java.awt.Color(50, 142, 110));
-        logoTitleLabel2.setText(".");
-        logoTitleLabel2.setToolTipText("");
-        logoTitleLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
         dashboardBtn.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         dashboardBtn.setForeground(new java.awt.Color(123, 122, 120));
         dashboardBtn.setText("Dashboard");
@@ -97,8 +89,6 @@ public class HistoriKasir extends javax.swing.JFrame {
                 dashboardBtnMouseClicked(evt);
             }
         });
-
-        dashboardIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbo_manajemen_toko/icons/dashboard.png"))); // NOI18N
 
         transaksiBtn.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         transaksiBtn.setForeground(new java.awt.Color(123, 122, 120));
@@ -129,8 +119,6 @@ public class HistoriKasir extends javax.swing.JFrame {
                 returnBarangBtnMouseClicked(evt);
             }
         });
-
-        returnBarangIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbo_manajemen_toko/icons/return.png"))); // NOI18N
 
         logoutBtn.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         logoutBtn.setForeground(new java.awt.Color(123, 122, 120));
@@ -203,12 +191,9 @@ public class HistoriKasir extends javax.swing.JFrame {
                                 .addComponent(logoutBtn))
                             .addGroup(sideBarPanelLayout.createSequentialGroup()
                                 .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(sideBarPanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(dashboardIcon))
+                                    .addComponent(jLabel1)
                                     .addComponent(listBarangBtnIcon))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(12, 12, 12)
                                 .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(listBarangBtn)
                                     .addComponent(dashboardBtn)))
@@ -219,10 +204,7 @@ public class HistoriKasir extends javax.swing.JFrame {
                             .addGroup(sideBarPanelLayout.createSequentialGroup()
                                 .addComponent(listBarangIcon)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(returnBarangBtn))
-                            .addGroup(sideBarPanelLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(returnBarangIcon))))
+                                .addComponent(returnBarangBtn))))
                     .addGroup(sideBarPanelLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(returnBarangBtnIcon)
@@ -238,30 +220,22 @@ public class HistoriKasir extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(sideBarPanelLayout.createSequentialGroup()
-                        .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dashboardIcon)
-                            .addGroup(sideBarPanelLayout.createSequentialGroup()
-                                .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(dashboardBtn))
-                                .addGap(26, 26, 26)
-                                .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(listBarangBtn)
-                                    .addComponent(listBarangBtnIcon))
-                                .addGap(26, 26, 26)
-                                .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(transaksiBtn)
-                                    .addComponent(transaksiBtnIcon))
-                                .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(sideBarPanelLayout.createSequentialGroup()
-                                        .addGap(34, 34, 34)
-                                        .addComponent(returnBarangIcon))
-                                    .addGroup(sideBarPanelLayout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
-                                        .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(listBarangIcon)
-                                            .addComponent(returnBarangBtn))))))
-                        .addGap(27, 27, 27)
+                        .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(dashboardBtn))
+                        .addGap(26, 26, 26)
+                        .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(listBarangBtn)
+                            .addComponent(listBarangBtnIcon))
+                        .addGap(26, 26, 26)
+                        .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(transaksiBtn)
+                            .addComponent(transaksiBtnIcon))
+                        .addGap(26, 26, 26)
+                        .addGroup(sideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(listBarangIcon)
+                            .addComponent(returnBarangBtn))
+                        .addGap(33, 33, 33)
                         .addComponent(returnBarangBtnIcon))
                     .addComponent(historiTransaksiBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 328, Short.MAX_VALUE)
@@ -277,10 +251,6 @@ public class HistoriKasir extends javax.swing.JFrame {
                     .addComponent(logoutIcon))
                 .addGap(41, 41, 41))
         );
-
-        sideBarPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {dashboardBtn, dashboardIcon});
-
-        sideBarPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {returnBarangBtn, returnBarangIcon});
 
         sideBarPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {listBarangBtn, listBarangIcon});
 
@@ -405,7 +375,9 @@ private void setFullScreenMode(boolean fullscreen) {
 
     private void logoutBtnMouseClicked(java.awt.event.MouseEvent evt) {
         Login.Session.clearSession();
-        System.exit(0);
+        Login login = new Login();
+        login.setVisible(true);
+        dispose();
     }
 
 //    private void loadHistoriTransaksi(String keyword) {
@@ -492,12 +464,11 @@ private void setFullScreenMode(boolean fullscreen) {
         model.addColumn("Tanggal");
         
         try {
-            String query = "SELECT * FROM transactions WHERE id_transaksi LIKE ? or id_user LIKE ? OR waktu LIKE ? ";
+            String query = "SELECT * FROM transactions WHERE id_transaksi LIKE ? or id_user LIKE ? ";
             java.sql.Connection Vconn = (Connection)Koneksi.konfigDB();
             java.sql.PreparedStatement s = Vconn.prepareStatement(query);
             s.setString(1, "%"+keyword+"%");
             s.setString(2, "%"+keyword+"%");
-            s.setString(3, "%"+keyword+"%");
             ResultSet r = s.executeQuery();
             
             while (r.next()) {
@@ -518,22 +489,6 @@ private void setFullScreenMode(boolean fullscreen) {
     }
 
     public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HistoriKasir.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HistoriKasir.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HistoriKasir.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HistoriKasir.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -568,7 +523,6 @@ private void setFullScreenMode(boolean fullscreen) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel dashboardBtn;
-    private javax.swing.JLabel dashboardIcon;
     private javax.swing.JButton fbtnhst;
     private javax.swing.JTextField fcarihst;
     private javax.swing.JButton fresethst;
@@ -580,7 +534,6 @@ private void setFullScreenMode(boolean fullscreen) {
     private javax.swing.JLabel listBarangBtnIcon;
     private javax.swing.JLabel listBarangIcon;
     private javax.swing.JLabel logoTitleLabel1;
-    private javax.swing.JLabel logoTitleLabel2;
     private javax.swing.JLabel logoutBtn;
     private javax.swing.JLabel logoutIcon;
     private javax.swing.JPanel mainContentPanel;
@@ -590,7 +543,6 @@ private void setFullScreenMode(boolean fullscreen) {
     private javax.swing.JLabel profileRoleLabel;
     private javax.swing.JLabel returnBarangBtn;
     private javax.swing.JLabel returnBarangBtnIcon;
-    private javax.swing.JLabel returnBarangIcon;
     private javax.swing.JPanel sideBarPanel;
     private javax.swing.JLabel transaksiBtn;
     private javax.swing.JLabel transaksiBtnIcon;

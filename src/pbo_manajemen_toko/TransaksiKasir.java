@@ -559,7 +559,9 @@ public class TransaksiKasir extends javax.swing.JFrame {
 
     private void logoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseClicked
         Login.Session.clearSession();
-        System.exit(0);
+        Login login = new Login();
+        login.setVisible(true);
+        dispose();
     }//GEN-LAST:event_logoutBtnMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

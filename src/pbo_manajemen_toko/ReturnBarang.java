@@ -496,7 +496,9 @@ public class ReturnBarang extends javax.swing.JFrame {
 
     private void logoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseClicked
         Login.Session.clearSession();
-        System.exit(0);
+        Login login = new Login();
+        login.setVisible(true);
+        dispose();
     }//GEN-LAST:event_logoutBtnMouseClicked
 
     private void fbtncekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fbtncekActionPerformed
@@ -621,6 +623,8 @@ public class ReturnBarang extends javax.swing.JFrame {
             java.sql.Connection Vconn = null;
             java.sql.PreparedStatement pstInsert = null;
             java.sql.PreparedStatement pstUpdate = null;
+            java.sql.PreparedStatement pstUpdateTransaksi = null;
+            java.sql.PreparedStatement pstDelete = null;
 
             try {
                 Vconn = Koneksi.konfigDB();
@@ -640,6 +644,22 @@ public class ReturnBarang extends javax.swing.JFrame {
                 pstUpdate.setInt(1, jumlahReturn);
                 pstUpdate.setString(2, idItem);
                 pstUpdate.executeUpdate();
+                
+                // Kurangi jumlah dan subtotal di transaction_items
+                String updateTransaksiItem = "UPDATE transaction_items SET jumlah = jumlah - ?, subtotal = subtotal - ((subtotal / jumlah) * ?) WHERE id_transaksi = ? AND id_item = ?";
+                pstUpdateTransaksi = Vconn.prepareStatement(updateTransaksiItem);
+                pstUpdateTransaksi.setInt(1, jumlahReturn);
+                pstUpdateTransaksi.setInt(2, jumlahReturn);
+                pstUpdateTransaksi.setString(3, idTransaksi);
+                pstUpdateTransaksi.setString(4, idItem);
+                pstUpdateTransaksi.executeUpdate();
+
+                // (Opsional) Hapus baris jika jumlahnya 0
+                String deleteZeroQty = "DELETE FROM transaction_items WHERE jumlah <= 0 AND id_transaksi = ? AND id_item = ?";
+                pstDelete = Vconn.prepareStatement(deleteZeroQty);
+                pstDelete.setString(1, idTransaksi);
+                pstDelete.setString(2, idItem);
+                pstDelete.executeUpdate();
 
                 JOptionPane.showMessageDialog(this, "Return berhasil disimpan.");
                 fjumlahretur.setText("");
