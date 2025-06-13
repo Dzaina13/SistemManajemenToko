@@ -4,17 +4,11 @@
  */
 package pbo_manajemen_toko;
 
-	import java.awt.BorderLayout;
 	import java.awt.Color;
 	import java.sql.Connection;
-import java.sql.ResultSet;
+        import java.sql.ResultSet;
 	import javax.swing.JOptionPane;
-	import org.jfree.chart.ChartFactory;
-	import org.jfree.chart.ChartPanel;
-	import org.jfree.chart.JFreeChart;
-	import org.jfree.data.category.DefaultCategoryDataset;
-	import org.jfree.data.general.DefaultPieDataset;
-import pbo_manajemen_toko.Login.Session;
+        import pbo_manajemen_toko.Login.Session;
 
 
 /**

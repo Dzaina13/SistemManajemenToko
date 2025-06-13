@@ -396,9 +396,6 @@ public class Login extends javax.swing.JFrame {
                     new Dashboard().setVisible(true);
                    
                     break;
-
-            
-              
                  
             }
 
