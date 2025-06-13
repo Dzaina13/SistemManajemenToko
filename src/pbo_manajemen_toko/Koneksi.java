@@ -19,7 +19,7 @@ public class Koneksi {
         try {
             String url = "jdbc:mysql://localhost/db_toko";
             String user = "root";
-            String pass = "";
+            String pass = "13Juni2**5";
             koneksi = DriverManager.getConnection(url, user, pass);
             //JOptionPane.showMessageDialog(null, "Berhasil Koneksi!");
             System.out.println("Koneksi berhasil.");

@@ -18,7 +18,7 @@ import java.sql.ResultSet;
 public class Barang extends javax.swing.JFrame {
 
     /**
-     * Creates new form Barang
+     * Creates new form 
      */
     public Barang() {
         initComponents();
